@@ -1,0 +1,30 @@
+Dim cnt As Integer
+Dim maintflg As Integer
+
+ 
+
+memhandle = GetGridHandle("spread03")
+cnt = mrowcnt(memhandle)
+
+ 
+
+ 
+If cnt > 0 Then
+serr = MFirst(memhandle, maintflg)
+While serr = 0
+Call SetObjectValue("ccleared3", "1")
+'Call SetBufferValue("brecondep.cleared", "1")
+Call MUpdate(memhandle)
+Call MessBox("Hai", MB_OK, "0060")
+
+ 
+
+serr = MNext(memhandle, maintflg)
+
+ 
+
+Wend
+
+ 
+
+End If
